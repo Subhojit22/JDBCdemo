@@ -22,13 +22,13 @@ public class JDBCCrudExample {
                 System.out.print("Enter your choice: ");
 
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine(); 
 
                 switch (choice) {
                     case 1:
-                        System.out.print("Enter name: ");
+                        System.out.print("Enter Name: ");
                         String name = scanner.nextLine();
-                        System.out.print("Enter email: ");
+                        System.out.print("Enter Email Id: ");
                         String email = scanner.nextLine();
                         insertUser(conn, name, email);
                         break;
@@ -39,7 +39,7 @@ public class JDBCCrudExample {
                         System.out.print("Enter user ID to update: ");
                         int updateId = scanner.nextInt();
                         scanner.nextLine(); // Consume newline
-                        System.out.print("Enter new email: ");
+                        System.out.print("Enter new Email Id: ");
                         String newEmail = scanner.nextLine();
                         updateUserEmail(conn, updateId, newEmail);
                         break;
@@ -78,7 +78,7 @@ public class JDBCCrudExample {
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name") +
-                        ", Email: " + rs.getString("email"));
+                        ", Email Id: " + rs.getString("email"));
             }
         }
     }
